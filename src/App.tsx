@@ -7,13 +7,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sobre from './paginas/sobre/Sobre';
 import Contato from './paginas/contato/Contato';
 import Ajuda from './paginas/ajuda/Ajuda';
-import Entrar from './paginas/entrar/Entrar';
+import Login from './paginas/login/Login';
 import Parcerias from './paginas/parcerias/Parcerias';
 import Educacao from './paginas/educacao/Educacao';
+import Cadastro from './paginas/cadastro/Cadastro';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
     <>
+    <AuthProvider>
     <BrowserRouter>
         <Navbar />
           <div className='min-h-[80vh]'>
@@ -25,11 +28,13 @@ function App() {
               <Route path="/contato" element={<Contato />} />
               <Route path="/ajuda" element={<Ajuda />} />
               <Route path="/parcerias" element={<Parcerias />} />
-              <Route path="/entrar" element={<Entrar />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/cadastro" element={<Cadastro />} />
             </Routes>
           </div>
           <Footer />
         </BrowserRouter>
+        </AuthProvider>
     </>
 );
 }

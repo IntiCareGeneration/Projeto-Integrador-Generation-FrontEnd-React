@@ -15,7 +15,8 @@ function Navbar() {
                         <Link to="/contato" className="navbar-link">Contato</Link>
                         <Link to="/ajuda" className="navbar-link">Ajuda</Link>
                         <Link to="/parcerias" className="navbar-link">Parcerias</Link>
-                        <Link to="/entrar" className="navbar-link">Entrar</Link>
+                        <Link to="/login" className="navbar-link">Login</Link>
+                        <Link to="/cadastro" className="navbar-link">Cadastro</Link>
                     </div>
                 </div>
             </div>
