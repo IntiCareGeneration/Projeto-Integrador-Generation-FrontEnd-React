@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
+:root {
+    --azul-marinho: #007BFF;
+    --verde: #28A745;
+    --branco: #FFFFFF;
+    --cinza: #6C757D;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--azul-marinho);
+}
+
 .home-container {
     background-color: #e6f4f1; 
     display: flex;

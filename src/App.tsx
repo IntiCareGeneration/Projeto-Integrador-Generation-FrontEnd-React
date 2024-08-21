@@ -12,6 +12,11 @@ import Parcerias from './paginas/parcerias/Parcerias';
 import Educacao from './paginas/educacao/Educacao';
 import Cadastro from './paginas/cadastro/Cadastro';
 import { AuthProvider } from './contexts/AuthContext';
+import ListaCategorias from './components/categorias/listaCategorias/ListaCategorias';
+import FormularioCategoria from './components/categorias/formularioCategoria/FormularioCategoria';
+import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
+import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos';
+import FormularioProduto from './components/produtos/formularioProduto/FormularioProduto';
 
 function App() {
   return (
@@ -30,6 +35,13 @@ function App() {
               <Route path="/parcerias" element={<Parcerias />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/categorias" element={<ListaCategorias/>} />
+              <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
+              <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
+              <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+              <Route path="/produtos" element={<ListaProdutos />} />
+              <Route path="/cadastroProdutos" element={<FormularioProduto />} />
+              <Route path="/editarProduto/:id" element={<FormularioProduto />} />
             </Routes>
           </div>
           <Footer />
