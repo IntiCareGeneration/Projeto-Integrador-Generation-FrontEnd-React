@@ -18,7 +18,7 @@ function Navbar() {
                         <Link to="/login" className="navbar-link">Login</Link>
                         <Link to="/cadastro" className="navbar-link">Cadastro</Link>
                         <Link to='/categorias' className='hover:underline'>Categorias</Link>
-                        <Link to='/cadastroProdutos' className='hover:underline'>CadastrarProduto</Link>
+                        <Link to='/cadastroCategoria' className='hover:underline'>CadastrarCategoria</Link>
                     </div>
                 </div>
             </div>
