@@ -167,6 +167,19 @@ function FormularioProduto() {
           />
         </div>
         <div className="flex flex-col gap-2">
+          <label htmlFor="preco">Preço do Produto</label>
+          <input
+            value={produto.preco}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="number"
+            step="0.01" // Para permitir valores decimais
+            placeholder="Preço"
+            name="preco"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
           <p>Categoria do Produto</p>
           <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
             <option value="" selected disabled>Selecione uma categoria</option>
