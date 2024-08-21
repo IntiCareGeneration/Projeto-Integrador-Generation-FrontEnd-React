@@ -3,12 +3,15 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
 import Categoria from '../../../models/Categoria';
+import { toastAlerta } from '../../../util/toastAlerta';
 
 function FormularioCategoria() {
   const [categoria, setCategoria] = useState<Categoria>({ id: 0, nome: '', genero: '' }); // Ajustando o estado inicial para corresponder ao modelo Categoria
 
   let navigate = useNavigate();
+
   const { id } = useParams<{ id: string }>();
+
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
@@ -44,15 +47,15 @@ function FormularioCategoria() {
           }
         })
 
-        alert('Categoria atualizada com sucesso')
+        toastAlerta('Categoria atualizada com sucesso', 'sucesso')
         retornar()
 
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
+          toastAlerta('O token expirou, favor logar novamente', 'info')
           handleLogout()
         } else {
-          alert('Erro ao atualizar a Categoria')
+          toastAlerta('Erro ao atualizar a Categoria','erro')
         }
 
       }
@@ -65,14 +68,14 @@ function FormularioCategoria() {
           }
         })
 
-        alert('Categoria cadastrado com sucesso')
+        toastAlerta('Categoria cadastrado com sucesso','sucesso')
 
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
+          toastAlerta('O token expirou, favor logar novamente','info')
           handleLogout()
         } else {
-          alert('Erro ao cadastrar a Categoria')
+          toastAlerta('Erro ao cadastrar a Categoria','erro')
         }
       }
     }
@@ -86,7 +89,7 @@ function FormularioCategoria() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta('Você precisa estar logado', 'info');
       navigate('/login');
     }
   }, [token]);
