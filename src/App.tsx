@@ -19,12 +19,14 @@ import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos';
 import FormularioProduto from './components/produtos/formularioProduto/FormularioProduto';
 import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto';
 import Perfil from './paginas/perfil/Perfil';
+//import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <>
     <AuthProvider>
-    <BrowserRouter>
+    
+      <BrowserRouter>
         <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>

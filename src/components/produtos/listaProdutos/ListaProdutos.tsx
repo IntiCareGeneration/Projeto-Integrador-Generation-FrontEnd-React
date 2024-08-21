@@ -5,6 +5,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import { buscar } from '../../../services/Service';
 import Produto from '../../../models/Produto';
 import CardProduto from '../cardProduto/CardProduto';
+import { toastAlerta } from '../../../util/toastAlerta';
 
 
 function ListaProdutos() {
@@ -17,7 +18,7 @@ function ListaProdutos() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta('Você precisa estar logado', 'info');
       navigate('/');
     }
   }, [token]);
@@ -31,7 +32,7 @@ function ListaProdutos() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta('O token expirou, favor logar novamente', 'info')
         handleLogout()
       }
     }
@@ -45,8 +46,8 @@ function ListaProdutos() {
       {produtos.length === 0 && (
         <Dna
           visible={true}
-          height="200"
-          width="200"
+          height="100"
+          width="100"
           ariaLabel="dna-loading"
           wrapperStyle={{}}
           wrapperClass="dna-wrapper mx-auto"
