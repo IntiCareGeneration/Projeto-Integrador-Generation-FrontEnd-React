@@ -1,9 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 import logoNavbar from '/src/assets/logo-navbar-novo.png'
+import { AuthContext } from '../../contexts/AuthContext';
 
 function Navbar() {
+
+    let navigate = useNavigate()
+
+    const { usuario, handleLogout } = useContext(AuthContext)
+
+    function logout() {
+        handleLogout()
+        alert('Usuário deslogado com sucesso')
+        navigate('/login')
+    }
+
     return (
         <>
             <div className="navbar-container bg-gradient-to-b from-sky-100 to to-white text-slate">
@@ -20,7 +32,8 @@ function Navbar() {
                         <Link to='/categorias' className="navbar-link">Categorias</Link>
                         <Link to='/cadastroCategoria' className="navbar-link">CadastrarCategoria</Link>
                         <Link to="/login" className="navbar-link">Login</Link>
-                        <Link to="/contato" className="navbar-link">Contato</Link>
+                        <Link to='/perfil' className="navbar-link">Perfil</Link>
+                        <Link to='' onClick={logout} className="navbar-link">Sair</Link>
                         
                     </div>
                 </div>
