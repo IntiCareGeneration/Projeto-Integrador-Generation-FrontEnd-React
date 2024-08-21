@@ -2,8 +2,6 @@
 
 .navbar-container {
     width: 100%;
-    background-color: #004d40;
-    color: white;
     display: flex;
     justify-content: center;
     padding: 20px 0;
