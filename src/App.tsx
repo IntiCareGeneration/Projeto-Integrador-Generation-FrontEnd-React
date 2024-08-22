@@ -22,6 +22,7 @@ import Carrinho from './components/carrinho/Carrinho';
 import { CarrinhoProvider } from './contexts/CarrinhoContext';
 import PoliticaPrivacidade from './paginas/politicaPrivacidade/PoliticaPrivacidade';
 import TermosUso from './paginas/termosUso/TermosUso';
+import Doacao from './paginas/doacao/Doacao';
 //import { ToastContainer } from 'react-toastify';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/educacao" element={<Educacao />} />
+              <Route path="/doacao" element={<Doacao />} />
               <Route path="/ajuda" element={<Ajuda />} />
               <Route path="/parcerias" element={<Parcerias />} />
               <Route path="/login" element={<Login />} />
