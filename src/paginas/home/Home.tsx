@@ -3,7 +3,6 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import ModalProduto from "../../components/produtos/modalProduto/ModalProduto";
 import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
-import bannerHome from "/src/assets/med.jpg";
 
 function Home() {
   return (
