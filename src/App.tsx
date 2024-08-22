@@ -5,7 +5,6 @@ import Navbar from './components/navBar/NavBar';
 import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sobre from './paginas/sobre/Sobre';
-import Contato from './paginas/contato/Contato';
 import Ajuda from './paginas/ajuda/Ajuda';
 import Login from './paginas/login/Login';
 import Parcerias from './paginas/parcerias/Parcerias';
@@ -21,6 +20,10 @@ import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto'
 import Perfil from './paginas/perfil/Perfil';
 import Carrinho from './components/carrinho/Carrinho';
 import { CarrinhoProvider } from './contexts/CarrinhoContext';
+import PoliticaPrivacidade from './paginas/politicaPrivacidade/PoliticaPrivacidade';
+import TermosUso from './paginas/termosUso/TermosUso';
+import ListaProdutosPorCategoria from './components/produtos/listaProdutosPorCategoria/ListaProdutosPorCategoria';
+import Doacao from './paginas/doacao/Doacao';
 //import { ToastContainer } from 'react-toastify';
 
 function App() {
@@ -36,7 +39,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/educacao" element={<Educacao />} />
-              <Route path="/contato" element={<Contato />} />
+              <Route path="/doacao" element={<Doacao />} />
               <Route path="/ajuda" element={<Ajuda />} />
               <Route path="/parcerias" element={<Parcerias />} />
               <Route path="/login" element={<Login />} />
@@ -46,11 +49,14 @@ function App() {
               <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
               <Route path="/produtos" element={<ListaProdutos />} />
+              <Route path="/produtos/categoria/:id" element={<ListaProdutosPorCategoria />} />
               <Route path="/cadastroProdutos" element={<FormularioProduto />} />
               <Route path="/editarProduto/:id" element={<FormularioProduto />} />
               <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/carrinho" element={<Carrinho />} />
+              <Route path="/termos-uso" element={<TermosUso />} />
+              <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
             </Routes>
           </div>
           <Footer />

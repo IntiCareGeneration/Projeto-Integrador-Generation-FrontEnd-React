@@ -20,7 +20,7 @@ function Navbar() {
         <>
             <div className="navbar-container bg-gradient-to-b from-sky-100 to-white">
                 <div className="navbar-content">
-                <Link to="/home" className="text-2xl font-bold uppercase flex items-center">
+                <Link to="/home" className="">
                 <img src={logoNavbar} alt="Logo Inticare" className="h-14 w-auto mr-2" /></Link>
 
                     <div className="navbar-links">

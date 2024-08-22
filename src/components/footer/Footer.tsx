@@ -1,22 +1,20 @@
 import React from 'react';
-import { EnvelopeSimple, FacebookLogo, InstagramLogo, LinkedinLogo,  } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
     return (
         <>
             <footer className="footer-container">
-            <div className="container mx-auto border-t border-opacity-30 border-sky-300 p-6">
-                <div className="footer-content">
-                    <p className="footer-text font-bold">IntiCare | Copyright: 2024</p>
-                    <p className="footer-text">Acesse nossas redes sociais</p>
-                    <div className="footer-icons">
-                        <LinkedinLogo size={48} weight="bold" />
-                        <InstagramLogo size={48} weight="bold" />
-                        <FacebookLogo size={48} weight="bold" />
-                        <EnvelopeSimple size={48} weight="bold"/>
+                <div className="container mx-auto border-t border-opacity-30 border-sky-300 p-6">
+                    <div className="footer-content">
+                        <p className="footer-text font-bold">INTICARE | Copyright: 2024</p>
+                        <div className="footer-links">
+                            <Link to="/politica-privacidade" className="footer-link">Política de Privacidade</Link>
+                            <span className="footer-divider"> | </span>
+                            <Link to="/termos-uso" className="footer-link">Termos de Uso</Link>
+                        </div>
                     </div>
-                </div>
                 </div>
             </footer>
         </>

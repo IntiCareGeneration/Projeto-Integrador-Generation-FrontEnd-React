@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    padding: 18px;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -14,13 +14,7 @@
     align-items: center;
     width: 100%;
     max-width: 1750px;
-    padding: 0 20px;
-}
-
-.navbar-brand {
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    padding: auto;
 }
 
 .navbar-links {

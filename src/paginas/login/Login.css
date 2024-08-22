@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+  background-color: #f3f7fc; /* Cor de fundo neutra, igual ao cadastro */
 }
 
 .login-box {
@@ -16,6 +17,7 @@
   padding: 2rem;
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Bordas arredondadas */
 }
 
 .login-form {
@@ -26,25 +28,26 @@
 
 .login-title {
   font-size: 2rem;
-  color: #06442c;
+  color: #33a9b6; /* Cor do título igual à usada no cadastro */
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .input-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Aumentado o espaçamento entre os grupos */
 }
 
 .input-group label {
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
-  color: #333;
+  color: #33a9b6; /* Cor da label */
+  font-weight: bold;
 }
 
 .input-field {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #33a9b6; /* Cor da borda igual ao cadastro */
   border-radius: 4px;
   font-size: 0.875rem;
 }
@@ -52,7 +55,7 @@
 .login-button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #00856f;
+  background-color: #33a9b6; /* Cor do botão igual ao cadastro */
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -65,7 +68,7 @@
 }
 
 .login-button:hover {
-  background-color: #007761;
+  background-color: #287e85; /* Cor do hover igual ao cadastro */
 }
 
 .forgot-password,
@@ -74,7 +77,7 @@
   text-align: center;
   margin-top: 1rem;
   font-size: 0.875rem;
-  color: #06442c;
+  color: #33a9b6; /* Cor dos links */
   text-decoration: none;
 }
 
@@ -90,15 +93,6 @@
 @media (min-width: 1024px) {
   .login-container {
     flex-direction: row;
-  }
-
-  .login-background {
-    display: block;
-    background-image: url('../../assets/login.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 40%;
-    height: 70vh;
   }
 
   .login-box {

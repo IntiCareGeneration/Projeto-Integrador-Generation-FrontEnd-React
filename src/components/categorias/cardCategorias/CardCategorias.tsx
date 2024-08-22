@@ -1,26 +1,38 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Categoria from '../../../models/Categoria'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Categoria from '../../../models/Categoria';
 
-interface CardCategoriaProps {
-  categoria: Categoria
+interface CardCategoriasProps {
+  categorias: Categoria[];
 }
 
-function CardCategorias({categoria}: CardCategoriaProps) {
+function CardCategorias({ categorias }: CardCategoriasProps) {
   return (
-    <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-      <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>Categoria</header>
-      <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
-      <div className="flex">
-        <Link to={`/editarCategoria/${categoria.id}`} className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
-          <button>Editar</button>
-        </Link>
-        <Link to={`/deletarCategoria/${categoria.id}`} className='text-slate-100 bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
-          <button>Deletar</button>
-        </Link>
-      </div>
+    <div className="space-y-2">
+      <ul className="list-disc pl-5">
+        {categorias.map((categoria) => (
+          <li key={categoria.id} className="flex items-center justify-between p-1 bg-white rounded-lg">
+            <Link to={`/produtos/categoria/${categoria.id}`} className="text-xl font-bold text-[#6C757D] hover:underline">{categoria.nome}
+            </Link>
+            <div className="flex items-center space-x-2 mt-4">
+              <Link
+                to={`/editarCategoria/${categoria.id}`}
+                className="text-white bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded-lg"
+              >
+                Editar
+              </Link>
+              <Link
+                to={`/deletarCategoria/${categoria.id}`}
+                className="text-white bg-red-500 hover:bg-red-700 px-4 py-2 rounded-lg"
+              >
+                Deletar
+              </Link>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
-export default CardCategorias
+export default CardCategorias;
