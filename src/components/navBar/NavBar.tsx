@@ -24,11 +24,13 @@ function Navbar() {
                 <img src={logoNavbar} alt="Logo Inticare" className="h-14 w-auto mr-2" /></Link>
 
                     <div className="navbar-links">
-                        <Link to='/categorias' className="navbar-link">Categorias</Link>
-                        <Link to='/perfil' className="navbar-link">Perfil</Link>
-                        <Link to="/cadastro" className="navbar-link">Cadastro</Link>
-                        <Link to="/carrinho" className="navbar-link">Carrinho</Link>
+                        <Link to='/sobre' className="navbar-link">Sobre</Link>
+                        <Link to='/educacao' className="navbar-link">EduCare</Link>
+                        <Link to='/educacao' className="navbar-link">Care+</Link>
+                        <Link to='/perfil' className="navbar-link">Parcerias</Link>
+                        <Link to="/ajuda" className="navbar-link">Ajuda</Link>
                         <Link to="/login" className="navbar-link">Login</Link>
+                        <Link to='/perfil' className="navbar-link">Perfil</Link>
                         <Link to='' onClick={logout} className="navbar-link">Sair</Link>
                         
                     </div>
