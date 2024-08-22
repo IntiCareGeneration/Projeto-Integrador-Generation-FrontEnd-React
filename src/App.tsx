@@ -19,13 +19,15 @@ import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos';
 import FormularioProduto from './components/produtos/formularioProduto/FormularioProduto';
 import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto';
 import Perfil from './paginas/perfil/Perfil';
+import Carrinho from './components/carrinho/Carrinho';
+import { CarrinhoProvider } from './contexts/CarrinhoContext';
 //import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <>
     <AuthProvider>
-    
+      <CarrinhoProvider> {/* Envolvendo o CarrinhoProvider */}
       <BrowserRouter>
         <Navbar />
           <div className='min-h-[80vh]'>
@@ -48,10 +50,12 @@ function App() {
               <Route path="/editarProduto/:id" element={<FormularioProduto />} />
               <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
+              <Route path="/carrinho" element={<Carrinho />} />
             </Routes>
           </div>
           <Footer />
         </BrowserRouter>
+        </CarrinhoProvider> {/* Fechando o CarrinhoProvider */}
         </AuthProvider>
     </>
 );
