@@ -21,6 +21,8 @@ import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto'
 import Perfil from './paginas/perfil/Perfil';
 import Carrinho from './components/carrinho/Carrinho';
 import { CarrinhoProvider } from './contexts/CarrinhoContext';
+import PoliticaPrivacidade from './paginas/politicaPrivacidade/PoliticaPrivacidade';
+import TermosUso from './paginas/termosUso/TermosUso';
 //import { ToastContainer } from 'react-toastify';
 
 function App() {
@@ -51,6 +53,8 @@ function App() {
               <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/carrinho" element={<Carrinho />} />
+              <Route path="/termos-uso" element={<TermosUso />} />
+              <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
             </Routes>
           </div>
           <Footer />
