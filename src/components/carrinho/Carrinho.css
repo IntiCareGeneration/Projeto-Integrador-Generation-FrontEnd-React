@@ -1,10 +1,16 @@
 /* Carrinho.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 .container {
     padding: 0 1rem;
     background-color: #fff; /* Fundo branco para a página */
     color: #333; /* Cor do texto padrão */
   }
   
+  .text {
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+  }
   ul {
     list-style: none;
     padding: 0;
@@ -20,6 +26,7 @@
     margin-bottom: 0.5rem;
     background-color: #f9f9f9; /* Cor de fundo clara para itens */
     color: #333; /* Cor do texto padrão */
+  
   }
   
   li p {
@@ -37,6 +44,7 @@
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
     cursor: pointer;
+    width: 150px;
   }
   
   .bg-red-500 {

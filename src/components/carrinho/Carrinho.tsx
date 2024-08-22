@@ -36,7 +36,7 @@ const Carrinho = () => {
 
   return (
     <div className="container mx-auto my-4">
-      <h2 className="text-xl font-bold" style={{ color: '#33a9b6' }}>Carrinho de Compras</h2>
+      <h2 className="text font-bold">Carrinho de Compras</h2>
       <ul className="list-none p-0 max-h-96 overflow-y-auto">
         {itensDoCarrinho.map(item => (
           <li key={item.id} className="border p-4 mb-2">
