@@ -39,25 +39,35 @@
     margin-bottom: 15px;
 }
 
-.add-to-cart-button {
-    background-color: rgb(85, 211, 85);
-    color: white; /* Cor do texto preta para "Adicionar ao Carrinho" */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.card button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: center;
     border: none;
     cursor: pointer;
+}
+
+.add-to-cart-button {
+    background-color: rgb(85, 211, 85);
+    color: white;
 }
 
 .edit-button {
     background-color: rgb(131, 210, 236);
-    color: white; /* Cor do texto preta para "Editar" */
-    border: none;
-    cursor: pointer;
+    color: white;
 }
 
 .delete-button {
     background-color: rgb(212, 77, 77);
-    color: white; /* Cor do texto preta para "Deletar" */
-    border: none;
-    cursor: pointer;
+    color: white;
 }
 
 .card button:hover {
