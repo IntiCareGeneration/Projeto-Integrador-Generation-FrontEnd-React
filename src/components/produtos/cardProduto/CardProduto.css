@@ -1,0 +1,65 @@
+/* CardProduto.css */
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card-content .card-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-content .card-description {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.card-content .card-price {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.add-to-cart-button {
+    background-color: rgb(85, 211, 85);
+    color: white; /* Cor do texto preta para "Adicionar ao Carrinho" */
+    border: none;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: rgb(131, 210, 236);
+    color: white; /* Cor do texto preta para "Editar" */
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: rgb(212, 77, 77);
+    color: white; /* Cor do texto preta para "Deletar" */
+    border: none;
+    cursor: pointer;
+}
+
+.card button:hover {
+    opacity: 0.8;
+}
