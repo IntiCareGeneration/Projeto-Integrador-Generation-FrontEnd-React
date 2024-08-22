@@ -3,7 +3,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import ModalProduto from "../../components/produtos/modalProduto/ModalProduto";
 import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
-import esteImage from "../../assets/cuidado.jpg"
+import cuidadoImage from "../../assets/cuidado.jpg"
 
 function Home() {
   return (
@@ -11,7 +11,7 @@ function Home() {
       <div className="home-container">
         <div className="banner-container">
           <img
-            src={esteImage}
+            src={cuidadoImage}
             alt="Banner"
             className="home-banner"
           />
