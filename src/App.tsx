@@ -22,6 +22,7 @@ import Carrinho from './components/carrinho/Carrinho';
 import { CarrinhoProvider } from './contexts/CarrinhoContext';
 import PoliticaPrivacidade from './paginas/politicaPrivacidade/PoliticaPrivacidade';
 import TermosUso from './paginas/termosUso/TermosUso';
+import ListaProdutosPorCategoria from './components/produtos/listaProdutosPorCategoria/ListaProdutosPorCategoria';
 import Doacao from './paginas/doacao/Doacao';
 //import { ToastContainer } from 'react-toastify';
 
@@ -48,6 +49,7 @@ function App() {
               <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
               <Route path="/produtos" element={<ListaProdutos />} />
+              <Route path="/produtos/categoria/:id" element={<ListaProdutosPorCategoria />} />
               <Route path="/cadastroProdutos" element={<FormularioProduto />} />
               <Route path="/editarProduto/:id" element={<FormularioProduto />} />
               <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
