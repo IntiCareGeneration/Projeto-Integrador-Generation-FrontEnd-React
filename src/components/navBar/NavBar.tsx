@@ -18,7 +18,7 @@ function Navbar() {
 
     return (
         <>
-            <div className="navbar-container bg-gradient-to-b from-sky-100 to to-white">
+            <div className="navbar-container bg-gradient-to-b from-sky-100 to-white">
                 <div className="navbar-content">
                 <Link to="/home" className="text-2xl font-bold uppercase flex items-center">
                 <img src={logoNavbar} alt="Logo Inticare" className="h-14 w-auto mr-2" /></Link>
