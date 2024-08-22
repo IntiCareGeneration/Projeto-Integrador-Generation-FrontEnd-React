@@ -5,7 +5,6 @@ import Navbar from './components/navBar/NavBar';
 import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sobre from './paginas/sobre/Sobre';
-import Contato from './paginas/contato/Contato';
 import Ajuda from './paginas/ajuda/Ajuda';
 import Login from './paginas/login/Login';
 import Parcerias from './paginas/parcerias/Parcerias';
@@ -38,7 +37,6 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/educacao" element={<Educacao />} />
-              <Route path="/contato" element={<Contato />} />
               <Route path="/ajuda" element={<Ajuda />} />
               <Route path="/parcerias" element={<Parcerias />} />
               <Route path="/login" element={<Login />} />

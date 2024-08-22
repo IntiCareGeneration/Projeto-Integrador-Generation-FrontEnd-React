@@ -10,13 +10,13 @@ import samuel from '../../assets/samuel.jpg';
 
 const Sobre: React.FC = () => {
   const teamMembers = [
-    { name: 'Carlos Eduardo', imgSrc: carlos },
-    { name: 'Daniele Valonga', imgSrc: dani },
-    { name: 'Edvaldo Junior', imgSrc: edvaldo },
-    { name: 'Fernanda Viotto', imgSrc: fer },
-    { name: 'Guilherme Soares', imgSrc: gui },
-    { name: 'Sara Oliveira', imgSrc: sara },
-    { name: 'Samuel Sá', imgSrc: samuel }
+    { name: 'Carlos Eduardo', imgSrc: carlos, linkedin: 'https://www.linkedin.com/in/carlos-eduardo-correia-9bab16277/' },
+    { name: 'Daniele Valonga', imgSrc: dani, linkedin: 'https://www.linkedin.com/in/daniele-valonga-72a49a254/' },
+    { name: 'Edvaldo Junior', imgSrc: edvaldo, linkedin: 'https://www.linkedin.com/in/edvaldo-junior-dev/' },
+    { name: 'Fernanda Viotto', imgSrc: fer, linkedin: 'https://www.linkedin.com/in/fernanda-viotto-de-gobbi/' },
+    { name: 'Guilherme Soares', imgSrc: gui, linkedin: 'https://www.linkedin.com/in/guilherme-soarest/' },
+    { name: 'Sara Oliveira', imgSrc: sara, linkedin: 'https://www.linkedin.com/in/saramonteirooliveira/' },
+    { name: 'Samuel Sá', imgSrc: samuel, linkedin: 'https://www.linkedin.com/in/samuel-sa/' }
   ];
 
   return (
@@ -55,10 +55,10 @@ const Sobre: React.FC = () => {
           <h2>Nossa Equipe</h2>
           <div className="team-grid">
             {teamMembers.map((member, index) => (
-              <div key={index} className="team-member">
+              <a key={index} href={member.linkedin} target="_blank" rel="noopener noreferrer" className="team-member">
                 <img src={member.imgSrc} alt={member.name} className="team-photo" />
                 <p>{member.name}</p>
-              </div>
+              </a>
             ))}
           </div>
         </section>
