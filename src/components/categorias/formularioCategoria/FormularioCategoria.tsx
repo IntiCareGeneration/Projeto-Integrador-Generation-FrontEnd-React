@@ -119,6 +119,7 @@ function FormularioCategoria() {
             placeholder="Gênero"
             name='genero'
             className="border-2 border-slate-700 rounded p-2"
+            value={categoria.genero}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>

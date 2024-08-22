@@ -2,20 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 
-interface CardCategoriaProps {
-  categoria: Categoria[];
+interface CardCategoriasProps {
+  categorias: Categoria[];
 }
 
-function CardCategoria({ categoria }: CardCategoriaProps) {
+function CardCategorias({ categorias }: CardCategoriasProps) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-2">
       <ul className="list-disc pl-5">
-        {categoria.map((categoria) => (
-          <li key={categoria.id} className="flex items-center justify-between p-2 bg-slate-100 rounded-lg">
-            <Link to={`/produtos/${categoria.id}`} className="text-xl font-bold text-[#6C757D] hover:underline">
-              {categoria.nome}
+        {categorias.map((categoria) => (
+          <li key={categoria.id} className="flex items-center justify-between p-1 bg-white rounded-lg">
+            <Link to={`/produtos/categoria/${categoria.id}`} className="text-xl font-bold text-[#6C757D] hover:underline">{categoria.nome}
             </Link>
-            <div className="flex space-x-4">
+            <div className="flex items-center space-x-2 mt-4">
               <Link
                 to={`/editarCategoria/${categoria.id}`}
                 className="text-white bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded-lg"
@@ -36,4 +35,4 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
   );
 }
 
-export default CardCategoria;
+export default CardCategorias;
