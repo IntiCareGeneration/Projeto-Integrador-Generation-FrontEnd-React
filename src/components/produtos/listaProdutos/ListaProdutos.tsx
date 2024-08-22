@@ -6,6 +6,7 @@ import { buscar } from '../../../services/Service';
 import Produto from '../../../models/Produto';
 import CardProduto from '../cardProduto/CardProduto';
 import { toastAlerta } from '../../../util/toastAlerta';
+import CartIcon from '../CartIcon'; // Certifique-se de que o caminho está correto
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -58,6 +59,7 @@ function ListaProdutos() {
           <CardProduto key={produto.id} post={produto} />
         ))}
       </div>
+      <CartIcon /> {/* Adicionando o CartIcon aqui */}
     </>
   );
 }
