@@ -59,8 +59,9 @@
 .home-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 35px; /* Ajustado para espaçamento do botão */
+    gap: 15px;
+    margin-top: 20px; /* Ajustado para espaçamento do botão */
+
 }
 
 .home-button {

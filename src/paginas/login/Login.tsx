@@ -32,7 +32,7 @@ function Login() {
     <div className="login-container">
       <div className="login-box">
         <form className="login-form" onSubmit={login}>
-          <h1 className="login-title">Boas-vindas à IntiCare</h1>
+          <h1 className="login-title">Boas-vindas à <strong>INTICARE</strong></h1>
 
           <div className="input-group">
             <label htmlFor="usuario">E-mail</label>
