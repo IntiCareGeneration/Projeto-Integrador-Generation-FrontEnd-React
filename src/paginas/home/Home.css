@@ -13,59 +13,54 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     height: auto;
+    width: 100%;
     font-family: 'Roboto', sans-serif;
-    color: #33a9b6;
 }
 
 .banner-container {
     grid-column: 1 / span 2;
     grid-row: 1;
     background-size: cover;
-    background-position: center;
+    background-position: center bottom;
     position: relative; /* Adicionado para garantir que o conteúdo absoluto esteja posicionado sobre o banner */
 }
 
 .home-banner {
     width: 100%;
-    height: 70%;
+    height: 100%;
     object-fit: cover;
     display: block;
-    opacity: 0.5;
-}
-
-.home-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Justifica os itens à direita */
-    align-items: center; /* Centraliza os itens verticalmente */
-    /* Outros estilos conforme necessário */
+    opacity: 0.3;
 }
 
 .overlay-content { /* Novo contêiner para o título, subtítulo e botões */
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(30%, -110%);
+    top: 45%;
+    right: 0%;
+    transform: translateY(-50%);
     text-align: center;
     color: #33a9b6; /* Ajuste a cor para contraste com o banner */
+    padding-right: 200px; /* Espaçamento da borda direita */
 }
 
 .home-title {
     font-size: 4rem;
-    font-weight: bold;
+    font-weight: bolder;
     margin: 0;
+    color: #33a9b6;
 }
 
 .home-subtitle {
     font-size: 1.5rem;
     margin: 10px 0; /* Ajustado para espaçamento vertical */
+    color: #33a9b6;
 }
 
 .home-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px; /* Ajustado para espaçamento do botão */
+    margin-top: 35px; /* Ajustado para espaçamento do botão */
 }
 
 .home-button {
@@ -79,10 +74,10 @@
     cursor: pointer;
     transition: 0.3s ease;
     font-family: 'Roboto', sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Adiciona sombra */
 }
 
 .home-button:hover {
-    background-color: #015e68;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Intensifica a sombra ao passar o mouse */
+    background-color: #2795a1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Intensifica a sombra ao passar o mouse */
 }

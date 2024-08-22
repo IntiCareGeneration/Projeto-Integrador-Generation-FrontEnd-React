@@ -3,6 +3,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import ModalProduto from "../../components/produtos/modalProduto/ModalProduto";
 import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
+import esteImage from "../../assets/cuidado.jpg"
 
 function Home() {
   return (
@@ -10,11 +11,11 @@ function Home() {
       <div className="home-container">
         <div className="banner-container">
           <img
-            src="https://cdn.shopify.com/s/files/1/0276/7332/9753/t/7/assets/deb46b197af4--KV-EAU-DHADRIEN-1280x486.jpg?v=1667876058"
+            src={esteImage}
             alt="Banner"
             className="home-banner"
           />
-          <div className="overlay-content home-content">
+          <div className="overlay-content">
           <div className="home-title">Boas Vindas!</div>
           <div className="home-subtitle">Compromisso em cuidar da sua saúde e bem-estar.</div>
           <div className="home-buttons">
