@@ -12,9 +12,9 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--fundo-claro);
     margin: 0;
     padding: 0;
+    background-color: white;
     color: var(--texto-escuro);
 }
 
