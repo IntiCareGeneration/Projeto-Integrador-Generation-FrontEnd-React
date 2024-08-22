@@ -5,7 +5,6 @@ import Navbar from './components/navBar/NavBar';
 import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sobre from './paginas/sobre/Sobre';
-import Contato from './paginas/contato/Contato';
 import Ajuda from './paginas/ajuda/Ajuda';
 import Login from './paginas/login/Login';
 import Parcerias from './paginas/parcerias/Parcerias';
@@ -24,6 +23,7 @@ import { CarrinhoProvider } from './contexts/CarrinhoContext';
 import PoliticaPrivacidade from './paginas/politicaPrivacidade/PoliticaPrivacidade';
 import TermosUso from './paginas/termosUso/TermosUso';
 import ListaProdutosPorCategoria from './components/produtos/listaProdutosPorCategoria/ListaProdutosPorCategoria';
+import Doacao from './paginas/doacao/Doacao';
 //import { ToastContainer } from 'react-toastify';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/educacao" element={<Educacao />} />
-              <Route path="/contato" element={<Contato />} />
+              <Route path="/doacao" element={<Doacao />} />
               <Route path="/ajuda" element={<Ajuda />} />
               <Route path="/parcerias" element={<Parcerias />} />
               <Route path="/login" element={<Login />} />

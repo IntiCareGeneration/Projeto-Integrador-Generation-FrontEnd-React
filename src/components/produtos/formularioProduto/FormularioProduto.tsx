@@ -6,17 +6,13 @@ import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
 import { toastAlerta } from '../../../util/toastAlerta';
 
-
 function FormularioProduto() {
   let navigate = useNavigate();
-
   const { id } = useParams<{ id: string }>();
-
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-
   const [categoria, setCategoria] = useState<Categoria>({
     id: 0,
     nome: '',
@@ -29,12 +25,18 @@ function FormularioProduto() {
     descricao: '',
     preco: 0,
     quantidade: 0,
+    foto_produto: '', // Inicialize com uma string vazia
     categoriaModel: null,
     usuarioModel: null,
   });
 
   async function buscarProdutoPorId(id: string) {
-    await buscar(`/produto/${id}`, setProduto, {
+    await buscar(`/produto/${id}`, (data: Produto) => {
+      setProduto({
+        ...data,
+        categoriaModel: categoria, // Garantir que a categoria seja atualizada corretamente
+      });
+    }, {
       headers: {
         Authorization: token,
       },
@@ -68,8 +70,6 @@ function FormularioProduto() {
     buscarCategorias();
     if (id !== undefined) {
       buscarProdutoPorId(id);
-      console.log(categoria);
-
     }
   }, [id]);
 
@@ -80,7 +80,7 @@ function FormularioProduto() {
     });
   }, [categoria]);
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     setProduto({
       ...produto,
       [e.target.name]: e.target.value,
@@ -96,11 +96,15 @@ function FormularioProduto() {
   async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    console.log({ produto });
+    // Garantir que fotoProduto não seja null
+    const produtoParaEnviar = {
+      ...produto,
+      fotoProduto: produto.foto_produto || '', // Se fotoProduto for null, substitua por uma string vazia
+    };
 
     if (id != undefined) {
       try {
-        await atualizar(`/produto`, produto, setProduto, {
+        await atualizar(`/produto`, produtoParaEnviar, setProduto, {
           headers: {
             Authorization: token,
           },
@@ -117,7 +121,7 @@ function FormularioProduto() {
       }
     } else {
       try {
-        await cadastrar(`/produto`, produto, setProduto, {
+        await cadastrar(`/produto`, produtoParaEnviar, setProduto, {
           headers: {
             Authorization: token,
           },
@@ -130,7 +134,7 @@ function FormularioProduto() {
           toastAlerta('O token expirou, favor logar novamente', 'info')
           handleLogout()
         } else {
-          toastAlerta('Erro ao cadastrar a Produto','erro');
+          toastAlerta('Erro ao cadastrar o Produto','erro');
         }
       }
     }
@@ -149,19 +153,19 @@ function FormularioProduto() {
             value={produto.nomeProduto}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
-            placeholder="Titulo"
+            placeholder="Nome do Produto"
             name="nomeProduto"
             required
             className="border-2 border-slate-700 rounded p-2"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Descrição do Produto</label>
+          <label htmlFor="descricao">Descrição do Produto</label>
           <input
             value={produto.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
-            placeholder="Texto"
+            placeholder="Descrição"
             name="descricao"
             required
             className="border-2 border-slate-700 rounded p-2"
@@ -188,6 +192,17 @@ function FormularioProduto() {
               <option key={categoria.id} value={String(categoria.id)}>{categoria.nome}</option>
             ))}
           </select>
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="foto_produto">URL da Imagem</label>
+          <input
+            value={produto.foto_produto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="text"
+            placeholder="URL da Imagem"
+            name="foto_produto"
+            className="border-2 border-slate-700 rounded p-2"
+          />
         </div>
         <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto block py-2'>
           {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}

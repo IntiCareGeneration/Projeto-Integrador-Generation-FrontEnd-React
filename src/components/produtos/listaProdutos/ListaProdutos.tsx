@@ -6,7 +6,7 @@ import { buscar } from '../../../services/Service';
 import Produto from '../../../models/Produto';
 import CardProduto from '../cardProduto/CardProduto';
 import { toastAlerta } from '../../../util/toastAlerta';
-
+import CartIcon from '../CartIcon'; // Certifique-se de que o caminho está correto
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -32,8 +32,8 @@ function ListaProdutos() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        toastAlerta('O token expirou, favor logar novamente', 'info')
-        handleLogout()
+        toastAlerta('O token expirou, favor logar novamente', 'info');
+        handleLogout();
       }
     }
   }
@@ -41,6 +41,7 @@ function ListaProdutos() {
   useEffect(() => {
     buscarProdutos();
   }, [produtos.length]);
+
   return (
     <>
       {produtos.length === 0 && (
@@ -58,6 +59,7 @@ function ListaProdutos() {
           <CardProduto key={produto.id} post={produto} />
         ))}
       </div>
+      <CartIcon /> {/* Adicionando o CartIcon aqui */}
     </>
   );
 }
