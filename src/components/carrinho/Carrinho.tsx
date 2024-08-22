@@ -46,9 +46,6 @@ const Carrinho = () => {
                 {item.id >= 1000000 && <span className="text-gray-500"> (Doação)</span>}
               </p>
               <p>{item.descricao}</p>
-              <p className="text-right text-lg font-bold">
-                R$ {(item.preco * item.quantidade).toFixed(2)}
-              </p>
             </div>
             <button
               onClick={() => removerDoCarrinho(item.id)}
