@@ -5,9 +5,6 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      'verde-agua':'#33a9b6',
-    },
     extend: {},
   },
   plugins: [],
