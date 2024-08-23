@@ -10,7 +10,7 @@ import { toastAlerta } from '../../../util/toastAlerta';
 function ListaProdutosPorCategoria() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
   const { id } = useParams<{ id: string }>(); // Pegando o ID da categoria via URL
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;

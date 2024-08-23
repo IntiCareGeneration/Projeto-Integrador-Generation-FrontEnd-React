@@ -7,7 +7,7 @@ import './Cadastro.css';
 import { toastAlerta } from '../../util/toastAlerta';
 
 function Cadastro() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
 

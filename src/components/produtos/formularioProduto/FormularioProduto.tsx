@@ -7,7 +7,7 @@ import Produto from '../../../models/Produto';
 import { toastAlerta } from '../../../util/toastAlerta';
 
 function FormularioProduto() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;

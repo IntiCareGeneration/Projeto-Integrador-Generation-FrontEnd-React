@@ -11,7 +11,7 @@ import CartIcon from '../CartIcon'; // Certifique-se de que o caminho está corr
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;

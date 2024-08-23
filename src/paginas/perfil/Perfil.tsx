@@ -7,7 +7,7 @@ import cuidadoImage from "../../assets/cuidado.jpg"
 import './Perfil.css';
 
 function Perfil() {
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
     const { usuario } = useContext(AuthContext)
 
