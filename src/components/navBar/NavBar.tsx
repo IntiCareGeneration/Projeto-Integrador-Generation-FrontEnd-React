@@ -26,11 +26,9 @@ function Navbar() {
                         <div className="navbar-links">
                         <Link to='/sobre' className="navbar-link">Sobre</Link>
                         <Link to='/educacao' className="navbar-link">EduCare</Link>
-                        <Link to='/educacao' className="navbar-link">Care+</Link>
-                        <Link to='/perfil' className="navbar-link">Parcerias</Link>
+                        <Link to='/doacao' className="navbar-link">Care+</Link>
+                        <Link to='/parcerias' className="navbar-link">Parcerias</Link>
                         <Link to="/ajuda" className="navbar-link">Ajuda</Link>
-                        <Link to="/cadastro" className="navbar-link">Cadastro</Link>
-                        <Link to="/carrinho" className="navbar-link">Carrinho</Link>
                         <Link to='/perfil' className="navbar-link">Perfil</Link>
                         <Link to="/login" className="navbar-link">Login</Link>
                         <Link to='' onClick={logout} className="navbar-link">Sair</Link>

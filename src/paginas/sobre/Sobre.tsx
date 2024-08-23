@@ -15,8 +15,8 @@ const Sobre: React.FC = () => {
     { name: 'Edvaldo Junior', imgSrc: edvaldo, linkedin: 'https://www.linkedin.com/in/edvaldo-junior-dev/' },
     { name: 'Fernanda Viotto', imgSrc: fer, linkedin: 'https://www.linkedin.com/in/fernanda-viotto-de-gobbi/' },
     { name: 'Guilherme Soares', imgSrc: gui, linkedin: 'https://www.linkedin.com/in/guilherme-soarest/' },
-    { name: 'Sara Oliveira', imgSrc: sara, linkedin: 'https://www.linkedin.com/in/saramonteirooliveira/' },
-    { name: 'Samuel Sá', imgSrc: samuel, linkedin: 'https://www.linkedin.com/in/samuel-sa/' }
+    { name: 'Samuel Sá', imgSrc: samuel, linkedin: 'https://www.linkedin.com/in/samuel-sa/' },
+    { name: 'Sara Oliveira', imgSrc: sara, linkedin: 'https://www.linkedin.com/in/saramonteirooliveira/' }
   ];
 
   return (
