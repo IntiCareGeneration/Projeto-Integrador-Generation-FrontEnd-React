@@ -20,13 +20,13 @@
     margin-bottom: 40px; /* Espaço entre o texto e o formulário */
 }
 
-h1 {
+.h1 {
     color: #33a9b6;
     margin-bottom: 20px; /* Espaço entre o título e o parágrafo */
     font-size: 50px;
 }
 
-p {
+.p {
     color: #555;
     margin-bottom: 20px;
     padding-top: 20px; /* Adiciona espaçamento acima do parágrafo */
@@ -45,7 +45,7 @@ p {
     padding-top: 20px; 
 }
 
-form {
+.form {
     display: flex;
     flex-direction: column;
     align-items: stretch; /* Garante que os campos e labels se estiquem */
@@ -58,7 +58,7 @@ form {
     margin: 0 auto;
 }
 
-label {
+.label {
     color: #33a9b6;
     font-weight: bold;
     margin-bottom: 5px;
@@ -68,7 +68,7 @@ label {
 
 input[type="text"],
 input[type="email"],
-textarea {
+.textarea {
     width: 100%; /* Ajustado para 100% do container do form */
     padding: 8px; /* Padding adicionado para conforto do usuário */
     margin-bottom: 20px; /* Espaço entre os campos e o botão */
@@ -79,7 +79,7 @@ textarea {
 }
 
 /* Estilo para o botão "Enviar" no formulário */
-button {
+.button {
     width: 100%;
     max-width: 500px;
     background-color: #015e68 !important; /* Cor de fundo fixa */
@@ -102,10 +102,14 @@ button {
     transform: translate(-50%, -50%);
     padding: 20px;
     background-color: #ffffff; /* Cor de fundo do popup branca */
-    color: #ffffff; /* Cor do texto dentro do popup */
+    color: #000000; /* Cor do texto ajustada para garantir legibilidade */
     border: 2px solid #33a9b6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    display: flex; /* Utiliza Flexbox */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Alinha os itens horizontalmente ao centro */
+    text-align: center; /* Centraliza o texto dentro do popup */
 }
 
 /* Estilo para o botão "Fechar" no popup */
@@ -120,9 +124,8 @@ button {
 }
 
 /* Removendo o efeito de hover para manter a cor fixa */
-button:hover,
 .popup button:hover {
-    background-color: #015e69; /* Cor fixa */
-    color: #ffffff; /* Cor do texto fixa */
+    background-color: #015e68; /* Mantém a cor de fundo fixa */
+    color: #ffffff; /* Mantém a cor do texto fixa */
 }
 
