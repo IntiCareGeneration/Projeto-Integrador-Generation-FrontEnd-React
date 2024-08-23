@@ -31,6 +31,7 @@ function Navbar() {
                         <Link to="/ajuda" className="navbar-link">Ajuda</Link>
                         <Link to='/perfil' className="navbar-link">Perfil</Link>
                         <Link to="/login" className="navbar-link">Login</Link>
+                        <Link to="/cadastroCategoria" className="navbar-link">Cadastro</Link>
                         <Link to='' onClick={logout} className="navbar-link">Sair</Link>
                     </div>
                 </div>
