@@ -35,13 +35,13 @@ function App() {
         <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/educacao" element={<Educacao />} />
+              <Route path="/parcerias" element={<Parcerias />} />
               <Route path="/doacao" element={<Doacao />} />
               <Route path="/ajuda" element={<Ajuda />} />
-              <Route path="/parcerias" element={<Parcerias />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/categorias" element={<ListaCategorias/>} />
