@@ -20,7 +20,7 @@ const Ajuda: React.FC = () => {
         <div className="help-container">
             <h2 id="ajuda" className="centered-text">Como podemos te ajudar?</h2>
             <p id="escrever" className="centered-text">Escreva sua dúvida no formulário abaixo:</p>
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="nome" style={{ color: '#33a9b6' }}>Nome</label>
                     <input
@@ -45,7 +45,7 @@ const Ajuda: React.FC = () => {
                 </div>
                 <div>
                     <label htmlFor="duvida" style={{ color: '#33a9b6' }}>Dúvida</label>
-                    <textarea
+                    <textarea className='textarea'
                         id="duvida"
                         value={duvida}
                         onChange={(e) => setDuvida(e.target.value)}
@@ -53,12 +53,12 @@ const Ajuda: React.FC = () => {
                         required
                     />
                 </div>
-                <button className="text-white" type="submit">Enviar</button>
+                <button className="button text-white" type="submit">Enviar</button>
             </form>
 
             {showPopup && (
                 <div className="popup">
-                    <p>Obrigado, {nome}, sua dúvida foi enviada com sucesso!</p>
+                    <p className='p'>Obrigado, {nome}, sua dúvida foi enviada com sucesso!</p>
                     <button onClick={() => setShowPopup(false)}>Fechar</button>
                 </div>
             )}
