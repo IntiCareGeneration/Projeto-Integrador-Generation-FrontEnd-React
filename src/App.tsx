@@ -24,6 +24,7 @@ import PoliticaPrivacidade from './paginas/politicaPrivacidade/PoliticaPrivacida
 import TermosUso from './paginas/termosUso/TermosUso';
 import ListaProdutosPorCategoria from './components/produtos/listaProdutosPorCategoria/ListaProdutosPorCategoria';
 import Doacao from './paginas/doacao/Doacao';
+import { ToastContainer } from 'react-toastify';
 //import { ToastContainer } from 'react-toastify';
 
 function App() {
