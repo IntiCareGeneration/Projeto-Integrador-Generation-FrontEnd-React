@@ -43,7 +43,7 @@ function Login() {
               placeholder="Digite seu e-mail"
               className="input-field"
               value={usuarioLogin.usuario}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={atualizarEstado}
             />
           </div>
 
@@ -56,7 +56,7 @@ function Login() {
               placeholder="Digite sua senha"
               className="input-field"
               value={usuarioLogin.senha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={atualizarEstado}
             />
           </div>
 
