@@ -54,6 +54,9 @@ function Navbar() {
 
         {/* Links do menu - visíveis a partir de telas maiores (>=900px) */}
         <div className="hidden md:flex gap-5">
+          <Link to="/cadastroCategoria" className="text-lg font-bold text-[#33a9b6] hover:text-[#49c2d4]">
+            Cadastro
+          </Link>
           <Link to="/sobre" className="text-lg font-bold text-[#33a9b6] hover:text-[#015e68]">
             Sobre
           </Link>
@@ -75,9 +78,6 @@ function Navbar() {
           <Link to="/login" className="text-lg font-bold text-[#33a9b6] hover:text-[#015e68]">
             Login
           </Link>
-          <Link to="/cadastroCategoria" className="text-lg font-bold text-[#33a9b6] hover:text-[#49c2d4]">
-            Cadastro
-          </Link>
           <button
             onClick={logout}
             className="text-lg font-bold w-9 text-[#33a9b6] hover:text-[#015e68]"
@@ -90,6 +90,9 @@ function Navbar() {
       {/* Menu Dropdown - visível em telas menores */}
       {isOpen && (
         <div className="md:hidden flex flex-col gap-4 mt-4 px-4">
+          <Link to="/cadastroCategoria" onClick={handleLinkClick} className="text-lg font-bold text-[#33a9b6] hover:text-[#015e68]">
+            Cadastro
+          </Link>
           <Link to="/sobre" onClick={handleLinkClick} className="text-lg font-bold text-[#33a9b6] hover:text-[#015e68]">
             Sobre
           </Link>
@@ -110,9 +113,6 @@ function Navbar() {
           </Link>
           <Link to="/login" onClick={handleLinkClick} className="text-lg font-bold text-[#33a9b6] hover:text-[#015e68]">
             Login
-          </Link>
-          <Link to="/cadastroCategoria" onClick={handleLinkClick} className="text-lg font-bold text-[#33a9b6] hover:text-[#015e68]">
-            Cadastro
           </Link>
           <button
             onClick={logout}
