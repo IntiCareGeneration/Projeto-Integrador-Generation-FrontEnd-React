@@ -16,11 +16,7 @@ function FormularioCategoria() {
   const token = usuario.token;
 
   async function buscarPorId(id: string) {
-    await buscar(`/categoria/${id}`, setCategoria, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    await buscar(`/categoria/${id}`, setCategoria);
   }
 
   useEffect(() => {

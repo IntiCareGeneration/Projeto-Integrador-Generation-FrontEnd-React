@@ -10,16 +10,11 @@ import { toastAlerta } from '../../../util/toastAlerta';
 function ListaCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-  const navigate = useNavigate();
-
-  const { usuario, handleLogout } = useContext(AuthContext);
-  const token = usuario.token;
+  const { handleLogout } = useContext(AuthContext);
 
   async function buscarCategorias() {
     try {
-      await buscar('/categoria', setCategorias, {
-        headers: { Authorization: token },
-      });
+      await buscar('/categoria', setCategorias);
     } catch (error: any) {
       if (error.toString().includes('403')) {
         toastAlerta('O token expirou, favor logar novamente','info')
@@ -27,13 +22,6 @@ function ListaCategorias() {
       }
     }
   }
-
-  useEffect(() => {
-    if (token === '') {
-      toastAlerta('Você precisa estar logado', 'info');
-      navigate('/login');
-    }
-  }, [token]);
 
   useEffect(() => {
     buscarCategorias();

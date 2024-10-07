@@ -35,12 +35,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsLoading(true)
         try {
             await login(`/usuarios/logar`, userLogin, setUsuario)
-            toastAlerta('Você precisa estar logado', 'info');
+            toastAlerta('Login realizado com sucesso!', 'info');
             setIsLoading(false)
 
         } catch (error) {
             console.log(error)
-            toastAlerta('Você precisa estar logado', 'info');
+            toastAlerta('E-mail ou Senha incorretos', 'info');
             setIsLoading(false)
         }
     }

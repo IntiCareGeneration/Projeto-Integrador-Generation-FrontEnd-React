@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import axios from "axios";
 
 export const api = axios.create({
-  //baseURL:'http://localhost:8080/'
+  // baseURL:'http://localhost:8080/'
   baseURL: import.meta.env.VITE_API_URL
 })
 
@@ -17,8 +18,8 @@ export const login = async(url: string, dados: Object, setDados: Function) => {
   setDados(resposta.data)
 }
 
-export const buscar = async(url: string, setDados: Function, header: Object) => {
-  const resposta = await api.get(url, header)
+export const buscar = async(url: string, setDados: Function) => {
+  const resposta = await api.get(url)
   setDados(resposta.data)
 }
 

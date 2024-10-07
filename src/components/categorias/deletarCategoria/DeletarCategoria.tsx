@@ -17,11 +17,7 @@ function DeletarCategoria() {
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/categoria/${id}`, setCategoria, {
-                headers: {
-                    'Authorization': token
-                }
-            })
+            await buscar(`/categoria/${id}`, setCategoria)
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 toastAlerta('O token expirou, favor logar novamente', 'info')

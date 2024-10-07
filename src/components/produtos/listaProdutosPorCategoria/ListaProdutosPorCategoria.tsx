@@ -25,11 +25,7 @@ function ListaProdutosPorCategoria() {
   async function buscarProdutos() {
     try {
       // Usando o novo endpoint para filtrar produtos por categoria
-      await buscar(`/produto/categoria/${id}`, setProdutos, {
-        headers: {
-          Authorization: token,
-        },
-      });
+      await buscar(`/produto/categoria/${id}`, setProdutos);
     } catch (error: any) {
       if (error.toString().includes('403')) {
         toastAlerta('O token expirou, favor logar novamente', 'info');

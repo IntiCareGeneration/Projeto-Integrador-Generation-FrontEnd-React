@@ -36,27 +36,15 @@ function FormularioProduto() {
         ...data,
         categoriaModel: categoria, // Garantir que a categoria seja atualizada corretamente
       });
-    }, {
-      headers: {
-        Authorization: token,
-      },
     });
   }
 
   async function buscarCategoriaPorId(id: string) {
-    await buscar(`/categoria/${id}`, setCategoria, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    await buscar(`/categoria/${id}`, setCategoria);
   }
 
   async function buscarCategorias() {
-    await buscar('/categoria', setCategorias, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    await buscar('/categoria', setCategorias);
   }
 
   useEffect(() => {

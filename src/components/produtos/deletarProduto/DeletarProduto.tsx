@@ -18,11 +18,7 @@ function DeletarProduto() {
 
   async function buscarPorId(id: string) {
     try {
-      await buscar(`/produto/${id}`, setProduto, {
-        headers: {
-          'Authorization': token
-        }
-      })
+      await buscar(`/produto/${id}`, setProduto)
     } catch (error: any) {
       if (error.toString().includes('403')) {
         toastAlerta('O token expirou, favor logar novamente', 'info')
