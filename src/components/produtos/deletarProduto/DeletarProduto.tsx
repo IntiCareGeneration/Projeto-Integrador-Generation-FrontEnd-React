@@ -84,5 +84,4 @@ function DeletarProduto() {
     </div>
   )
 }
-
 export default DeletarProduto
