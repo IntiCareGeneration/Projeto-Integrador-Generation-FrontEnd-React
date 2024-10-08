@@ -25,7 +25,7 @@ function FormularioProduto() {
     descricao: '',
     preco: 0,
     quantidade: 0,
-    fotoProduto: '', // Inicialize com uma string vazia
+    fotoProduto: '',
     categoriaModel: null,
     usuarioModel: null,
   });
@@ -34,7 +34,7 @@ function FormularioProduto() {
     await buscar(`/produto/${id}`, (data: Produto) => {
       setProduto({
         ...data,
-        categoriaModel: categoria, // Garantir que a categoria seja atualizada corretamente
+        categoriaModel: categoria,
       });
     }, {
       headers: {
@@ -96,45 +96,43 @@ function FormularioProduto() {
   async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // Garantir que fotoProduto não seja null
     const produtoParaEnviar = {
       ...produto,
-      fotoProduto: produto.fotoProduto || '', // Se fotoProduto for null, substitua por uma string vazia
+      fotoProduto: produto.fotoProduto || '',
     };
 
-    if (id != undefined) {
+    if (id !== undefined) {
       try {
-        await cadastrar(`/produto`, produtoParaEnviar, setProduto, {
+        await atualizar(`/produto/${id}`, produtoParaEnviar, setProduto, {
           headers: {
-              Authorization: token,
+            Authorization: token,
           },
-      });
+        });
         toastAlerta('Produto atualizado com sucesso', 'sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          toastAlerta('O token expirou, favor logar novamente','info')
-          handleLogout()
+          toastAlerta('O token expirou, favor logar novamente', 'info');
+          handleLogout();
         } else {
-          toastAlerta('Erro ao atualizar o Produto','erro');
+          toastAlerta('Erro ao atualizar o Produto', 'erro');
         }
       }
     } else {
       try {
-        await cadastrar(`/produto`, produto, setProduto, {
+        await cadastrar(`/produto`, produtoParaEnviar, setProduto, {
           headers: {
             Authorization: token,
           },
-        }); 
-
-        toastAlerta('Produto cadastrado com sucesso','sucesso');
+        });
+        toastAlerta('Produto cadastrado com sucesso', 'sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          toastAlerta('O token expirou, favor logar novamente', 'info')
-          handleLogout()
+          toastAlerta('O token expirou, favor logar novamente', 'info');
+          handleLogout();
         } else {
-          toastAlerta('Erro ao cadastrar o Produto','erro');
+          toastAlerta('Erro ao cadastrar o Produto', 'erro');
         }
       }
     }
@@ -177,7 +175,7 @@ function FormularioProduto() {
             value={produto.preco}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="number"
-            step="0.01" // Para permitir valores decimais
+            step="0.01"
             placeholder="Preço"
             name="preco"
             required
@@ -186,10 +184,21 @@ function FormularioProduto() {
         </div>
         <div className="flex flex-col gap-2">
           <p>Categoria do Produto</p>
-          <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-            <option value="" selected disabled>Selecione uma categoria</option>
-            {categorias.map((categoria) => (
-              <option key={categoria.id} value={String(categoria.id)}>{categoria.nome}</option>
+          <select
+            name="categoria"
+            id="categoria"
+            className="border p-2 border-slate-800 rounded"
+            onChange={(e) =>
+              setCategoria(categorias.find(cat => cat.id === Number(e.currentTarget.value)) || categoria)
+            }
+          >
+            <option value="" disabled>
+              Selecione uma categoria
+            </option>
+            {Array.isArray(categorias) && categorias.map((categoria) => (
+              <option key={categoria.id} value={String(categoria.id)}>
+                {categoria.nome}
+              </option>
             ))}
           </select>
         </div>
@@ -204,8 +213,18 @@ function FormularioProduto() {
             className="border-2 border-slate-700 rounded p-2"
           />
         </div>
-        <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto block py-2'>
-          {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
+        <button
+          disabled={carregandoCategoria}
+          type="submit"
+          className="rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto block py-2"
+        >
+          {carregandoCategoria ? (
+            <span>Carregando</span>
+          ) : id !== undefined ? (
+            'Editar'
+          ) : (
+            'Cadastrar'
+          )}
         </button>
       </form>
     </div>
