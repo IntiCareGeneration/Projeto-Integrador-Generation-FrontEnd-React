@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
@@ -36,6 +37,7 @@ function FormularioProduto() {
         ...data,
         categoriaModel: categoria,
       });
+      
     }, {
       headers: {
         Authorization: token,
@@ -43,13 +45,13 @@ function FormularioProduto() {
     });
   }
 
-  async function buscarCategoriaPorId(id: string) {
-    await buscar(`/categoria/${id}`, setCategoria, {
-      headers: {
-        Authorization: token,
-      },
-    });
-  }
+  // async function buscarCategoriaPorId(id: string) {
+  //   await buscar(`/categoria/${id}`, setCategoria, {
+  //     headers: {
+  //       Authorization: token,
+  //     },
+  //   });
+  // }
 
   async function buscarCategorias() {
     await buscar('/categoria', setCategorias, {
@@ -84,10 +86,11 @@ function FormularioProduto() {
     setProduto({
       ...produto,
       [e.target.name]: e.target.value,
-      categoriaModel: categoria,
-      usuarioModel: usuario,
+      categoriaModel: categoria, // Mantém a categoria correta selecionada
+      usuarioModel: usuario, // Inclui o usuário logado
     });
   }
+  
 
   function retornar() {
     navigate('/produtos');
@@ -98,6 +101,7 @@ function FormularioProduto() {
 
     const produtoParaEnviar = {
       ...produto,
+      categoriaModel: categoria,
       fotoProduto: produto.fotoProduto || '',
     };
 
@@ -132,7 +136,8 @@ function FormularioProduto() {
           toastAlerta('O token expirou, favor logar novamente', 'info');
           handleLogout();
         } else {
-          toastAlerta('Erro ao cadastrar o Produto', 'erro');
+          toastAlerta('Erro ao cadastrar o Produto', error);
+          console.log(error)
         }
       }
     }
